@@ -1,0 +1,27 @@
+<%= form_for(@temporada) do |f| %>
+  <% if @temporada.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@temporada.errors.count, "error") %> prohibited this temporada from being saved:</h2>
+
+      <ul>
+      <% @temporada.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% f.hidden_field :temporada_id, value: @temporada.id %>
+
+  <div class="field">
+    <%= f.label :tit_temp %><br>
+    <%= f.text_field :tit_temp %>
+  </div>
+  <div class="field">
+    <%= f.label :ano %><br>
+    <%= f.number_field :ano %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

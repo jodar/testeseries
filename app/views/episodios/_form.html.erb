@@ -1,0 +1,23 @@
+<%= form_for(@episodio) do |f| %>
+  <% if @episodio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@episodio.errors.count, "error") %> prohibited this episodio from being saved:</h2>
+
+      <ul>
+      <% @episodio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% f.hidden_field :temporada_id, value: @temporada.id %>
+
+  <div class="field">
+    <%= f.label :tit_epi %><br>
+    <%= f.text_field :tit_epi %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
