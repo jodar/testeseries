@@ -72,6 +72,6 @@ class TemporadasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def temporada_params
-      params.require(:temporada).permit(:tit_temp, :ano, :temporada_id :series_id)
+      params.require(:temporada).permit(:tit_temp, :ano, :temporada_id, :series_id)
     end
 end

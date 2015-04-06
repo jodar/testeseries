@@ -11,8 +11,10 @@
     </div>
   <% end %>
 
-  <% f.hidden_field :temporada_id, value: @temporada.id %>
+  <%= f.hidden_field :serie_id, value: @serie_id %>
 
+  <%= @series_id %>
+  
   <div class="field">
     <%= f.label :tit_temp %><br>
     <%= f.text_field :tit_temp %>
