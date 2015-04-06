@@ -15,6 +15,7 @@ class EpisodiosController < ApplicationController
   # GET /episodios/new
   def new
     @episodio = Episodio.new
+    @temporada_id = params[:temporada_id]
   end
 
   # GET /episodios/1/edit
@@ -69,6 +70,6 @@ class EpisodiosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def episodio_params
-      params.require(:episodio).permit(:tit_epi,:temporada_id, :serie_id)
+      params.require(:episodio).permit(:tit_epi, :temporada_id, :series_id)
     end
 end

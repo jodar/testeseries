@@ -26,11 +26,10 @@ class TemporadasController < ApplicationController
   # POST /temporadas.json
   def create
     @temporada = Temporada.new(temporada_params)
-    @temporada.series_id = @series_id
 
     respond_to do |format|
       if @temporada.save
-        format.html { redirect_to "/episodios/new/?temporada_id=#{@temporada.id}&series_id=#{@series_id}", notice: 'Adicionar Temporada para série' }
+        format.html { redirect_to "/episodios/new/?temporada_id=#{@temporada.id}&series_id=#{@temporada.series_id}", notice: 'Adicionar Temporada para série' }
         #format.html { redirect_to @temporada, notice: 'Temporada was successfully created.' }
         #format.json { render :show, status: :created, location: @temporada }
       else
